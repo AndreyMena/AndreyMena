@@ -13,4 +13,6 @@ comment5.params=unNombre
 comment5.target=void\ setNombre(java.lang.String)
 comment6.params=elPrecio
 comment6.target=void\ setPrecio(double)
-numComments=7
+comment7.params=precioTotal
+comment7.target=void\ calcularCosto(double)
+numComments=8

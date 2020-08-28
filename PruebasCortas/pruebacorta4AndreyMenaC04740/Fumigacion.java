@@ -64,5 +64,18 @@ public class Fumigacion
     
     }
     
+    //Metodos
+    
+    public void calcularCosto(double precioTotal)
+    
+    {
+        precio = precio + precioTotal;
+    
+    
+    }
+    
+
+    
+    
     
 }   
