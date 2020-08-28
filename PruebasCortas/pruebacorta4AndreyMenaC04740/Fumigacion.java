@@ -33,8 +33,36 @@ public class Fumigacion
     
     }    
 
+    //Gets y Sets
+    
+    public String getNombre()
+    
+    {
+        return nombre;
     
     
+    
+    
+    }
+    
+    public double getPrecio()
+    {
+        return precio;
     
 
+    }
+    
+    public void setNombre(String unNombre)
+    {
+        nombre = unNombre;
+        
+    } 
+    
+    public void setPrecio(double elPrecio)
+    {
+        precio = elPrecio;
+    
+    }
+    
+    
 }   
