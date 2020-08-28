@@ -9,5 +9,32 @@
 
 public class Fumigacion
 {
+    //Atributos
+    private String nombre;
+    private double precio;
     
-}
+    //Constructores
+    public Fumigacion()
+    {
+        nombre = "";
+        precio = 0;
+    
+    }
+    
+    public Fumigacion(String unNombre, double elPrecio) 
+    {
+        
+        nombre = unNombre;
+        precio = elPrecio;
+    
+    
+    
+    
+    
+    }    
+
+    
+    
+    
+
+}   

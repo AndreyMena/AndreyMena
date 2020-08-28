@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.target=Fumigacion
 comment0.text=\r\n\ Clase\ Fumigacion,\ sirve\ para\ eliminar\ cucarachas.\r\n\ @Autor\ Andrey\ Mena\ Espinoza\ \r\n\ @Carne\ C04740\r\n\ @Fecha\ 28/8/2020\r\n
-numComments=1
+comment1.params=
+comment1.target=Fumigacion()
+comment2.params=unNombre\ elPrecio
+comment2.target=Fumigacion(java.lang.String,\ double)
+numComments=3
