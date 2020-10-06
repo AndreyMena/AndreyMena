@@ -10,7 +10,6 @@ public class Experto
     private Interfaz interfaz;
     private int[][] matriz;
     private int filas;
-    private int columnas;
     /**
      * Constructor for objects of class Experto
      */
@@ -22,8 +21,8 @@ public class Experto
     public void jugar(int lasfilas) 
     {
         filas = lasfilas+1;
-        columnas = filas;
-        matriz = new int[filas][columnas];
+        matriz = new int[filas][filas];
+        this.LlenarMatriz(filas);
         this.toString();
     }
     
@@ -32,15 +31,14 @@ public class Experto
         String resultado = "";
         String cadena = "";
         int numero;
-        this.LlenarMatriz();
                   
         for (int i = 0; i < filas; ++i) {
-                for (int j = 0; j < columnas; ++j) {
+                for (int j = 0; j < filas; ++j) {
                 if (matriz[i][j] == matriz[i][0]) {
-                    resultado = "\t"+matriz[i][j]+"";
+                    resultado += "\t"+matriz[i][j]+"";
                 }
-                if (matriz[i][j] == matriz[i][columnas]) {
-                    resultado = "\n"+matriz[i][j]+"";
+                if (matriz[i][j] == matriz[i][filas]) {
+                    resultado += "\n"+matriz[i][j]+"";
                 }
             }
         }  
@@ -50,25 +48,27 @@ public class Experto
         return resultado;
     }
     
-    public void LlenarMatriz()
+    public void LlenarMatriz(int filas)
     {
         Random randomizador;
         randomizador = new Random();
-        int asignador;
-        
+        int contador = 0;
         for (int i = 0; i < filas; ++i) {
-                for (int j = 0; j < columnas; ++j) {
-                asignador = randomizador.nextInt(filas*columnas-1);                
-                for (int f = 0; f < columnas; f++) {
-                        for (int g = 0; g < columnas; g++) {
-                            if (matriz[i][j] == asignador) {
-                                if (j != 0) {
+                for (int j = 0; j < filas; ++j) {
+                int asignador;
+                asignador = randomizador.nextInt(filas * filas - 1); 
+                matriz[i][j] = asignador;
+                for (int f = 0; f < filas; f++) {
+                        for (int g = 0; g < filas; g++) {
+                            if (matriz[f][g] == asignador) {
+                                contador++;
+                                if (j != 0 && contador > 1) {
                                     j--;
                                 }else{
-                                    i--;
-                                }    
-                            }else{
-                                matriz[i][j] = asignador;
+                                    if (j == 0 && contador > 1){
+                                        i--;
+                                    }
+                                } 
                             }
                     }
                 }               
