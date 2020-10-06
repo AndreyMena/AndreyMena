@@ -14,7 +14,7 @@ public class Fumigacion
     private double precio;
     
     //Constructores
-    public Fumigacion()
+    public Fumigacion() //Observacion: no era necesario la implementación de este constructor. 
     {
         nombre = "";
         precio = 0;
@@ -74,7 +74,12 @@ public class Fumigacion
     
     }
     
-
+    /*
+     * -El método calcularCosto está incompleto,el parámetro que se le pasa es incorrecto y el método debía ser tipo "double" ya que
+     * tenía que retornar un valor de tipo double. (-20pts)
+     * -No se realizó el método toString (-15pts)
+     * Nota: 65
+    */
     
     
     
