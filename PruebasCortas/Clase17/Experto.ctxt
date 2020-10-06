@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Experto
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Experto\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=TITULO
+comment1.target=Experto(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Experto\r\n
+comment2.params=lasfilas
+comment2.target=void\ jugar(int)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=
+comment4.target=void\ LlenarMatriz()
+comment5.params=
+comment5.target=void\ buscarNumero()
+comment6.params=
+comment6.target=void\ devolverVecinos()
+comment7.params=
+comment7.target=void\ LlenarCaracol()
+comment8.params=
+comment8.target=void\ mostrarAyuda()
+numComments=9
