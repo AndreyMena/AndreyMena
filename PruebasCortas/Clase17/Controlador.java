@@ -30,11 +30,11 @@ public class Controlador
         do {
             opcion = interfaz.pedirOpcion(MENU_OPCIONES1, MENSAJE_OPCION1);
             switch (opcion) {
-                case 0: 
+                case 0:
                 opcion2 = interfaz.pedirOpcion(MENU_OPCIONES2 , MENSAJE_OPCION2);
                 experto.jugar(opcion2);
-                break;                
-                case 1: 
+                break;
+                case 1:
                 experto.mostrarAyuda();
                 break;
             }

@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 /**
  * Clase para la interacción con el usuario.
  * Programación 1
@@ -17,7 +18,7 @@ public class Interfaz extends JOptionPane
         TITULO = elTitulo;
     }
     
-    public void decirMensaje(String elMensaje)
+    public void decirMensaje(JTextArea elMensaje)
     {
         this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE);
     }    
