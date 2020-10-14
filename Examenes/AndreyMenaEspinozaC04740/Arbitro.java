@@ -14,7 +14,8 @@ public class Arbitro
     private JTextArea cadena;
     private String pregunta;
     private Tablero tablero;
-    private String mensaje; 
+    private String mensaje;
+    private String[] mensajeTablero;
     private int filas;
     private int columnas;
     private final String[] OPCIONES1 = {"OK"};
@@ -22,6 +23,8 @@ public class Arbitro
     private int intentos;
     private int posicion1;
     private int posicion2;
+    private int posicionDef1;
+    private int posicionDef2;
     private int dado;
     private boolean verificador;
     public Arbitro(String elTitulo)
@@ -36,7 +39,13 @@ public class Arbitro
         filas = opcion;
         columnas = opcion;        
         tablero = new Tablero(opcion);
-        mensaje = tablero.toString();        
+        mensaje = tablero.toString(); 
+        mensaje = mensaje + "\n";
+        mensaje += "1-No se mueva\n";
+        mensaje += "2-Avance 4 lugares\n";
+        mensaje += "3-Brinque a la próxima fila\n";
+        mensaje += "4-Retroceda 2 lugares\n";
+        mensaje += "5-¡Explotó! Fin del juego\n";
         intentos = interfaz.pedirNumeroIntento("Elija la cantidad de intentos");
         mensaje += "\nCantidad de intentos: "+intentos;
         cadena = new JTextArea(mensaje);
@@ -50,20 +59,24 @@ public class Arbitro
         }while(opcion3 != 0);
         int opcionJuego;
         dado = 0;
-        mensaje += "\n El dado saco: "+dado;
-        mensaje += "\nPosición temporal al avanzar por el valor del dado (fila, columna): ("posicion1,posicio2")";
         do {
             dado = tirarDado();
+            mensaje += "\n El dado saco: "+dado;
+            mensaje += "\nPosición temporal al avanzar por el valor del dado (fila, columna): ("+posicion1+","+posicion2+")";
+            mensaje += "\nPosición definitiva al ejecutar la instrucción de la casilla: "+posicionDef1+","+posicionDef2;
+            cadena = new JTextArea(mensaje);
             opcionJuego = interfaz.mostrarJuegoConOpciones(cadena,OPCIONES2);
-        }while(opcionJuego != 0 && verificador == false);
+            mensaje = tablero.toString(); 
+        }while(verificador == false);
 
     }
     
-    public String actualizarMensaje() 
+    public int posicionar()
     {
-        dado = tirarDado();
-        mensaje += "\n El dado saco: "+dado;
+        
+        ret
     }
+    
     
     public int tirarDado() 
     {
