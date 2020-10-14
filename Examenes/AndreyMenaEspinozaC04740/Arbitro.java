@@ -86,6 +86,7 @@ public class Arbitro
                 if (posicion1 > filas) {
                     posicion1= posicion1 - filas;
                     posicion1 = j;
+                    posicion1 = j;
                 }             
             }
         }
