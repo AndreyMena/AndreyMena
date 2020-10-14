@@ -4,4 +4,6 @@ comment0.text=\r\n\ Clase\ que\ simula\ un\ tablero.\r\n\ \r\n\ @author\ (Andrey
 comment1.params=opcion
 comment1.target=Tablero(int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tablero\r\n
-numComments=2
+comment2.params=
+comment2.target=void\ llenarMatriz()
+numComments=3
