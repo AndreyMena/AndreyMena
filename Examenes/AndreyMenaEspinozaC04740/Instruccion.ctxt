@@ -4,4 +4,6 @@ comment0.text=\r\n\ Esta\ clase\ crea\ las\ instrucciones\ que\ estaran\ en\ tab
 comment1.params=
 comment1.target=Instruccion()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Instruccion\r\n
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ darIdentificador()
+numComments=3

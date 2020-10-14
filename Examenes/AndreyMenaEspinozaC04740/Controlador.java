@@ -44,7 +44,7 @@ public class Controlador
                         interfaz.decirMensaje("El numero tiene que ser mayor o igual de 2 y menor de dos digitos");
                     }
                 }while (opcion2 < 2);
-                tablero = new Tablero(opcion2);
+                arbitro.jugar(opcion2);
                 break;                
                 case 1: 
                 interfaz.mostrarAyuda(MENSAJE_AYUDA);

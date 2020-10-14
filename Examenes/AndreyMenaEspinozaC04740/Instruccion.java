@@ -21,7 +21,11 @@ public class Instruccion
         identificador = asignador;
     }
     
-    public String
+    public String darIdentificador()
+    {
+        String mensaje = ""+identificador;
+        return mensaje;
+    }
     
     /*
     public int asignador() 

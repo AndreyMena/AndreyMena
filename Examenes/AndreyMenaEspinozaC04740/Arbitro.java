@@ -11,21 +11,28 @@ public class Arbitro
 {
     private Interfaz interfaz;
     private final String TITULO;
-    private String hilera;
     private JTextArea cadena;
-    private String[][] mensaje;
     private String pregunta;
-
+    private Tablero tablero;
+    private String mensaje; 
+    private int filas;
+    private int columnas;
+    private final String OPCIONES1 = {"OK"};
+    private final String OPCIONES2 = {"Tirar dado"};
+    
     public Arbitro(String elTitulo)
     {
-        TITULO = elTitulo;
-        hilera = "";
+        TITULO = elTitulo;        
         pregunta = "";
     }
     
     public void jugar(int opcion) 
     {
-        
+        filas = opcion;
+        columnas = opcion;        
+        tablero = new Tablero(opcion);
+        mensaje = tablero.toString();
+        cadena = new JTextArea(mensaje);
     }
     
 

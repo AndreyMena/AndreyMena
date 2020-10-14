@@ -29,10 +29,29 @@ public class Tablero
             for (int j = 0; j < columnas; j++) {
                 Instruccion instruccion = new Instruccion();
                 tablero[i][j] = instruccion;
-                mensaje[i][j] = instruccion;
-                
+                mensaje[i][j] = instruccion.darIdentificador();                
             }
         }
+    }
+    
+    public String toString()
+    {
+        String resultado = "";
+        int i = 0;
+        int j = 0;
+        for (i = 0; i < filas; ++i) {
+            for (j = 0; j < columnas; ++j) {
+                resultado = resultado+mensaje[i][j]+"\t";
+            }
+            resultado = resultado + "\n";
+        }
+        resultado = resultado + "\n";
+        resultado += "1-No se mueva\n";
+        resultado += "2-Avance 4 lugares\n";
+        resultado += "3-Brinque a la próxima fila\n";
+        resultado += "4-Retroceda 2 lugares\n";
+        resultado += "5-¡Explotó! Fin del juego\n";
+        return resultado;
     }
 
 }
