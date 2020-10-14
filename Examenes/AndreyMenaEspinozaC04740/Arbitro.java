@@ -13,6 +13,7 @@ public class Arbitro
     private final String TITULO;
     private JTextArea cadena;
     private String pregunta;
+    private String[][] mensajeT;
     private Tablero tablero;
     private String mensaje;
     private String[] mensajeTablero;
@@ -40,6 +41,8 @@ public class Arbitro
         columnas = opcion;        
         tablero = new Tablero(opcion);
         mensaje = tablero.toString(); 
+        mensajeT = new String[filas][columnas];
+        mensajeT = tablero.devolverMensaje();
         mensaje = mensaje + "\n";
         mensaje += "1-No se mueva\n";
         mensaje += "2-Avance 4 lugares\n";
@@ -61,6 +64,7 @@ public class Arbitro
         dado = 0;
         do {
             dado = tirarDado();
+            this.posicionar(dado);
             mensaje += "\n El dado saco: "+dado;
             mensaje += "\nPosición temporal al avanzar por el valor del dado (fila, columna): ("+posicion1+","+posicion2+")";
             mensaje += "\nPosición definitiva al ejecutar la instrucción de la casilla: "+posicionDef1+","+posicionDef2;
@@ -71,10 +75,21 @@ public class Arbitro
 
     }
     
-    public int posicionar()
+    public int posicionar(int dado)
     {
         
-        ret
+        for (int i= 0; i < filas; i++) {
+            for (int j = 0; j < filas; j++) {
+                while (posicion1 <dado) {
+                    posicion1++;
+                }
+                if (posicion1 > filas) {
+                    posicion1= posicion1 - filas;
+                    posicion1 = j;
+                }             
+            }
+        }
+        return posicion1;
     }
     
     

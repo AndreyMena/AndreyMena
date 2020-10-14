@@ -33,6 +33,10 @@ public class Tablero
             }
         }
     }
+    public String[][] devolverMensaje()
+    {
+        return mensaje;
+    }
     
     public String toString()
     {
