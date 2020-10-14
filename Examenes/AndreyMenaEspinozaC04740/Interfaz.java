@@ -59,7 +59,7 @@ public class Interfaz extends JOptionPane
     {
         this.showMessageDialog(null, mensaje, TITULO, PLAIN_MESSAGE);
     }
-
+    
     /*
      * Pide un numero entero menor de 2 digitos.
      * @param mensaje
@@ -99,6 +99,54 @@ public class Interfaz extends JOptionPane
                         }
                     }else{
                         this.showMessageDialog(null, "Por favor digite un numero mayor o igual de 2 y menor de dos digitos", TITULO, PLAIN_MESSAGE);
+                        verificacion = false;
+                    }  
+                }
+            }
+        } while (verificacion == false || resultado==null);
+        resultadoFinal = Integer.parseInt(resultado);
+        return resultadoFinal;
+    }
+    
+    /*
+     * Pide un numero entero menor de 2 digitos.
+     * @param mensaje
+     * @return resultadoFinal
+     */
+    public int pedirNumeroIntento(String mensaje)
+    {
+        String resultado;
+        boolean verificacion = true;
+        int resultadoFinal;
+        do {
+            resultado = this.showInputDialog(null, mensaje);             
+            int tamano;
+            if (resultado == null) {
+                resultado = "";
+            }
+            tamano = resultado.length();
+            if (tamano == 0) {
+                verificacion = false;
+            }
+            if (tamano > 2) {
+                this.showMessageDialog(null, "Por favor digite un numero que no sea mayor de dos digitos", TITULO, PLAIN_MESSAGE);
+                verificacion = false;
+            }else{
+                if (tamano == 1) {
+                    if (resultado.charAt(0)=='0'||resultado.charAt(0)=='1'||resultado.charAt(0)=='2'||resultado.charAt(0)=='3'||resultado.charAt(0)=='4'||resultado.charAt(0)=='5'||resultado.charAt(0)=='6'||resultado.charAt(0)=='7'||resultado.charAt(0)=='8'||resultado.charAt(0)=='9'){
+                        verificacion = true;                    
+                    }else{
+                        this.showMessageDialog(null, "Por favor digite un numero que no sea mayor de dos digitos", TITULO, PLAIN_MESSAGE);
+                        verificacion = false;
+                    }  
+                }
+                if (tamano == 2) {
+                    if (resultado.charAt(0)=='0'||resultado.charAt(0)=='1'||resultado.charAt(0)=='2'||resultado.charAt(0)=='3'||resultado.charAt(0)=='4'||resultado.charAt(0)=='5'||resultado.charAt(0)=='6'||resultado.charAt(0)=='7'||resultado.charAt(0)=='8'||resultado.charAt(0)=='9'){
+                        if (resultado.charAt(1)=='0'||resultado.charAt(1)=='1'||resultado.charAt(1)=='2'||resultado.charAt(1)=='3'||resultado.charAt(1)=='4'||resultado.charAt(1)=='5'||resultado.charAt(1)=='6'||resultado.charAt(1)=='7'||resultado.charAt(1)=='8'||resultado.charAt(1)=='9') { 
+                            verificacion = true;
+                        }
+                    }else{
+                        this.showMessageDialog(null, "Por favor digite un numero que no sea mayor de dos digitos", TITULO, PLAIN_MESSAGE);
                         verificacion = false;
                     }  
                 }
