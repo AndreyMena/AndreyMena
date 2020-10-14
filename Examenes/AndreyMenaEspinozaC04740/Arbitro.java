@@ -22,10 +22,8 @@ public class Arbitro
     private final String[] OPCIONES1 = {"OK"};
     private final String[] OPCIONES2 = {"Tirar dado"};
     private int intentos;
-    private int posicion1;
-    private int posicion2;
-    private int posicionDef1;
-    private int posicionDef2;
+    private double posicion;
+    private double posicionDef;
     private int dado;
     private boolean verificador;
     public Arbitro(String elTitulo)
@@ -66,8 +64,8 @@ public class Arbitro
             dado = tirarDado();
             this.posicionar(dado);
             mensaje += "\n El dado saco: "+dado;
-            mensaje += "\nPosición temporal al avanzar por el valor del dado (fila, columna): ("+posicion1+","+posicion2+")";
-            mensaje += "\nPosición definitiva al ejecutar la instrucción de la casilla: "+posicionDef1+","+posicionDef2;
+            mensaje += "\nPosición temporal al avanzar por el valor del dado (fila, columna): "+posicion;
+            mensaje += "\nPosición definitiva al ejecutar la instrucción de la casilla: "+posicionDef;
             cadena = new JTextArea(mensaje);
             opcionJuego = interfaz.mostrarJuegoConOpciones(cadena,OPCIONES2);
             mensaje = tablero.toString(); 
@@ -75,22 +73,20 @@ public class Arbitro
 
     }
     
-    public int posicionar(int dado)
+    public double posicionar(int dado)
     {
-        
+        double valor =0.0;
+        posicion = posicion+dado;
+        int buscador = 0;
+        int posicionF = 0;
         for (int i= 0; i < filas; i++) {
             for (int j = 0; j < filas; j++) {
-                while (posicion1 <dado) {
-                    posicion1++;
+                buscador++;  
+                if (buscador == posicion) { 
                 }
-                if (posicion1 > filas) {
-                    posicion1= posicion1 - filas;
-                    posicion1 = j;
-                    posicion1 = j;
-                }             
             }
         }
-        return posicion1;
+        return posicion;
     }
     
     
