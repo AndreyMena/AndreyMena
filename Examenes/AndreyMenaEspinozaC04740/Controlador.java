@@ -19,9 +19,10 @@ public class Controlador
     private final String[] PANTALLA_GANADOR = {"Salir"}; 
     private Arbitro arbitro;
     private Interfaz interfaz;  
+    private Tablero tablero; 
 
     public Controlador()
-    {
+    {        
         arbitro = new Arbitro(TITULO);
         interfaz = new Interfaz(TITULO);
     }
@@ -43,7 +44,7 @@ public class Controlador
                         interfaz.decirMensaje("El numero tiene que ser mayor o igual de 2 y menor de dos digitos");
                     }
                 }while (opcion2 < 2);
-                arbitro.jugar(opcion2);
+                tablero = new Tablero(opcion2);
                 break;                
                 case 1: 
                 interfaz.mostrarAyuda(MENSAJE_AYUDA);

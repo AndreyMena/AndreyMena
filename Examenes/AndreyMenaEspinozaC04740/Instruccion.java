@@ -1,37 +1,33 @@
 import java.util.Random;
 /**
- * Write a description of class Instruccion here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta clase crea las instrucciones que estaran en tablero.
+ * @author (Andrey Mena Espinoza) 
+ * @version (1.1)
  */
 public class Instruccion
 {
-    private String identificador;
-    private String instruccion1;
-    private String instruccion2;
-    private String instruccion3;
-    private String instruccion4;
-    private String instruccion5;
+    private int identificador;
+
 
     /**
      * Constructor for objects of class Instruccion
      */
     public Instruccion()    
-    {
-        identificador = this.asignador();
-        instruccion1 = "No se mueva";
-        instruccion2 = "Avance 4 lugares";
-        instruccion3 = "Brinque a la próxima fila";
-        instruccion4 = "Retroceda 2 lugares";
-        instruccion5 = "¡Explotó! Fin del juego";
+    { 
+        String instruccion1 = "1-No se mueva";
+        String instruccion2 = "2-Avance 4 lugares";
+        String instruccion3 = "3-Brinque a la próxima fila";
+        String instruccion4 = "4-Retroceda 2 lugares";
+        String instruccion5 = "5-¡Explotó! Fin del juego";
+        Random randomizador = new Random(); 
+        int asignador;
+        asignador = randomizador.nextInt(5);
+        asignador = asignador+1;
+        
     }
     
-    public String asignador() 
-    {
-        Random randomizador = new Random(); 
-        
-        return identificador;
-    }
+    
+    
+    
 
 }

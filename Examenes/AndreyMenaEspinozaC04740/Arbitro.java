@@ -24,7 +24,8 @@ public class Arbitro
     }
     
     public void jugar(int opcion) 
-    {        
+    {
+        
     }
     
 
