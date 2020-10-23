@@ -14,8 +14,10 @@ public class Calculador
     {
         int[] lista = laLista;
         int valor = 0;
-        int filas = lista.length();
-        for (int i ; i< filas; i++) {
+        int filas = lista.length;
+        int i = 0; 
+        if (lista[i] <= 0) {
+            return 0;
         }
         
         return valor;
