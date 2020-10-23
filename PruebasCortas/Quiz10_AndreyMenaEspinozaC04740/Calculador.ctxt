@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Calculador
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Calculador\ here.\r\n\ \r\n\ @author\ (AndreyMenaEspinoza\ C04740)\ \r\n\ @version\ (1.1)\r\n
-comment1.params=laLista
-comment1.target=int\ Calculador(int[])
+comment1.params=laLista\ i
+comment1.target=int\ Calculador(int[],\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Calculador\r\n
 numComments=2
