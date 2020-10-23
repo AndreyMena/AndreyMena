@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Calculador here.
+ * Clase Calculador.
  * 
  * @author (AndreyMenaEspinoza C04740) 
  * @version (1.1)
