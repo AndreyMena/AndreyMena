@@ -19,12 +19,11 @@ public class Calculador
             return 0;
         }else{
             if (lista[i] > 0 && i < lista.length) {
-                valor = lista[i]^2;
-                i++;
-                valor = valor+Calculador(lista,i);
+                subSolucion= Calculador(lista,i+1);
+                valor = subSolucion+lista[i]^2;                
             }
+            return valor;
         }
-        
 
     }
 }
