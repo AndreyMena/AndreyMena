@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Controlador
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\r\n\ Esta\ clase\ controla\ todo\ el\ programa.\r\n
+comment1.params=
+comment1.target=Controlador()
+comment2.params=
+comment2.target=void\ iniciar()
+comment2.text=\r\n\ Inicia\ el\ juego\ con\ sus\ opciones\ y\ dirige\ al\ usuario\ dependiendo\ de\ su\ eleccion.\r\n
+comment3.params=parametros
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ Metodo\ principal\ para\ iniciar\ TODO\ el\ juego\ en\ su\ respectivo\ orden.\r\n\ @param\ parametros\r\n
+numComments=4

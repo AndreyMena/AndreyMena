@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Lista
-comment0.text=\r\n\ Esta\ clase\ representa\ una\ lista\ enlazada\ que\ contiene\ nodos\ con\ palabras\ reservadas.\r\n\ @author\ (AndreyMenaEspinoza)\ \r\n\ @version\ (1.1)\r\n
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ una\ lista\ enlazada\ que\ contiene\ nodos\ con\ palabras\ reservadas.\r\n
 comment1.params=
 comment1.target=Lista()
 comment2.params=nueva
 comment2.target=void\ agregarPalabraReservada(PalabraReservada)
-numComments=3
+comment3.params=palabra
+comment3.target=PalabraReservada\ buscar(java.lang.String)
+numComments=4

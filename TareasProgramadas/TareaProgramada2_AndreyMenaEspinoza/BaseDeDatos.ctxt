@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=BaseDeDatos
-comment0.text=\r\n\ Esta\ clase\ contiene\ las\ palabras\ reservadas\ mas\ comunes\ que\ seran\ colocadas\ en\ los\ nodos\ de\ la\ lista\ enlazada.\r\n\ @author\ (AndreyMenaEspinoza\ C04740)\ \r\n\ @version\ (1.1)\r\n
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ contiene\ las\ palabras\ reservadas\ mas\ comunes\ que\ seran\ colocadas\ en\ los\ nodos\ de\ la\ lista\ enlazada.\r\n
 comment1.params=
 comment1.target=BaseDeDatos()
 comment2.params=
 comment2.target=void\ llenarBaseDeDatos()
-numComments=3
+comment3.params=i
+comment3.target=PalabraReservada\ getPalabraReservada(int)
+numComments=4

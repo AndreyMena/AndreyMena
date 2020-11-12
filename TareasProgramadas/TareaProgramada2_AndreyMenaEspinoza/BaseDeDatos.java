@@ -1,8 +1,10 @@
 
 /**
+ * Programación1
+ * TareaProgramada2
+ * @author (AndreyMenaEspinoza Carné: C04740)
+ * @version (1.1) 
  * Esta clase contiene las palabras reservadas mas comunes que seran colocadas en los nodos de la lista enlazada.
- * @author (AndreyMenaEspinoza C04740) 
- * @version (1.1)
  */
 public class BaseDeDatos
 {
@@ -73,4 +75,7 @@ public class BaseDeDatos
         baseDeDatos[50] = new PalabraReservada("switch");
     }
     
+    public PalabraReservada getPalabraReservada(int i){
+        return baseDeDatos[i];
+    }
 }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=NodoLista
-comment0.text=\r\n\ Esta\ clase\ representa\ el\ nodo\ que\ tiene\ la\ lista.\r\n\ \r\n\ @author\ (AndreyMenaEspinoza\ C04740)\ \r\n\ @version\ (1.1)\r\n
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ el\ nodo\ que\ tiene\ la\ lista.\r\n
 comment1.params=unaPalabra
 comment1.target=NodoLista(PalabraReservada)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n

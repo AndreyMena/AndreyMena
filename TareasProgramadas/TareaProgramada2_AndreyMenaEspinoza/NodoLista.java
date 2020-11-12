@@ -1,9 +1,10 @@
 
 /**
+ * Programación1
+ * TareaProgramada2
+ * @author (AndreyMenaEspinoza Carné: C04740)
+ * @version (1.1) 
  * Esta clase representa el nodo que tiene la lista.
- * 
- * @author (AndreyMenaEspinoza C04740) 
- * @version (1.1)
  */
 public class NodoLista
 {

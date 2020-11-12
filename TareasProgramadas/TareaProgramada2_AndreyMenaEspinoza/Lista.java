@@ -1,8 +1,10 @@
 
 /**
+ * Programación1
+ * TareaProgramada2
+ * @author (AndreyMenaEspinoza Carné: C04740)
+ * @version (1.1) 
  * Esta clase representa una lista enlazada que contiene nodos con palabras reservadas.
- * @author (AndreyMenaEspinoza) 
- * @version (1.1)
  */
 public class Lista
 {
@@ -24,5 +26,15 @@ public class Lista
             }
             aux.setSiguiente(nodoNuevo);
         }
+    }
+    
+    public PalabraReservada buscar(String palabra)
+    {
+        NodoLista aux = primero;
+        while(!aux.getPalabraReservada().getPalabra().equals(palabra)&&aux.getSiguiente()!=null) {
+            aux.setSiguiente(aux.getSiguiente());
+        }
+        PalabraReservada laPalabraReservada = aux.getPalabraReservada();
+        return laPalabraReservada;
     }
 }
