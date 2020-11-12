@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Arbol
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ un\ arbol\ con\ sus\ nodos\ que\ contienen\ palabras\r\n
+comment1.params=
+comment1.target=Arbol()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Arbol\r\n
+comment2.params=
+comment2.target=boolean\ estarVacio()
+comment3.params=palabraNueva
+comment3.target=void\ agregar(Palabra)
+comment4.params=
+comment4.target=boolean\ serHoja()
+comment5.params=laPalabra
+comment5.target=Palabra\ buscar(java.lang.String)
+comment6.params=arbol
+comment6.target=java.lang.String\ toString(Arbol)
+comment7.params=
+comment7.target=NodoArbol\ getNodo()
+numComments=8

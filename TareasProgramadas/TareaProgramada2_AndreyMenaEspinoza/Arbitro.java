@@ -23,7 +23,7 @@ public class Arbitro
     
     public void llenarListaEnlazada(){
         for (int i = 0; i<51;i++) {
-            PalabraReservada palabraReservada = baseDeDatos.getPalabraReservada(i);
+            Palabra palabraReservada = baseDeDatos.getPalabraReservada(i);
             lista.agregarPalabraReservada(palabraReservada);
         }
     }

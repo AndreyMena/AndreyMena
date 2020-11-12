@@ -4,12 +4,12 @@
  * TareaProgramada2
  * @author (AndreyMenaEspinoza Carné: C04740)
  * @version (1.1) 
- * Esta clase contiene la palabra reservada del lenguaje Java.
+ * Esta clase contiene una palabra, puede ser reservada del lenguaje Java, o no.
  */
-public class PalabraReservada
+public class Palabra
 {
     private String palabra;
-    public PalabraReservada(String laPalabra)
+    public Palabra(String laPalabra)
     {
         palabra = laPalabra;
     }

@@ -14,7 +14,7 @@ public class Lista
         primero = null;
     }
     
-    public void agregarPalabraReservada(PalabraReservada nueva)
+    public void agregarPalabraReservada(Palabra nueva)
     {
         NodoLista nodoNuevo = new NodoLista(nueva);
         NodoLista aux = primero;
@@ -28,13 +28,13 @@ public class Lista
         }
     }
     
-    public PalabraReservada buscar(String palabra)
+    public Palabra buscar(String palabra)
     {
         NodoLista aux = primero;
         while(!aux.getPalabraReservada().getPalabra().equals(palabra)&&aux.getSiguiente()!=null) {
             aux.setSiguiente(aux.getSiguiente());
         }
-        PalabraReservada laPalabraReservada = aux.getPalabraReservada();
+        Palabra laPalabraReservada = aux.getPalabraReservada();
         return laPalabraReservada;
     }
 }

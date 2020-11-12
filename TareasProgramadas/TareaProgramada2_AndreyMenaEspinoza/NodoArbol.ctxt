@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=NodoArbol
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ cada\ nodo\ del\ arbol.\r\n
+comment1.params=laPalabra
+comment1.target=NodoArbol(Palabra)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
+comment2.params=laPalabra
+comment2.target=void\ setPalabra(Palabra)
+comment3.params=
+comment3.target=Palabra\ getPalabra()
+comment4.params=elDerecho
+comment4.target=void\ setDerecho(Arbol)
+comment5.params=elIzquierdo
+comment5.target=void\ setIzquierdo(Arbol)
+comment6.params=
+comment6.target=Arbol\ getDerecho()
+comment7.params=
+comment7.target=Arbol\ getIzquierdo()
+numComments=8

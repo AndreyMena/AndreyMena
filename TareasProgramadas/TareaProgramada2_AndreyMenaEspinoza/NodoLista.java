@@ -8,23 +8,23 @@
  */
 public class NodoLista
 {
-    private PalabraReservada palabra;
+    private Palabra palabra;
     private NodoLista siguiente;
     /**
      * Constructor for objects of class Nodo
      */
-    public NodoLista(PalabraReservada unaPalabra)
+    public NodoLista(Palabra unaPalabra)
     {
         palabra = unaPalabra;
         siguiente = null;
     }
 
-    public void setPalabraReservada(PalabraReservada unaPalabra) 
+    public void setPalabraReservada(Palabra unaPalabra) 
     {
         palabra = unaPalabra;
     }
     
-    public PalabraReservada getPalabraReservada() 
+    public Palabra getPalabraReservada() 
     {
         return palabra;
     }

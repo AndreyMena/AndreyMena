@@ -6,5 +6,5 @@ comment1.target=BaseDeDatos()
 comment2.params=
 comment2.target=void\ llenarBaseDeDatos()
 comment3.params=i
-comment3.target=PalabraReservada\ getPalabraReservada(int)
+comment3.target=Palabra\ getPalabraReservada(int)
 numComments=4
