@@ -43,7 +43,22 @@ public class Arbol
     public int contarPalabra(Palabra palabra)
     {
         int resultado = 0;
-        
+        NodoArbol aux = raiz;
+        if (this.estarVacio()) {
+            resultado = 0;
+        }else{
+            if (palabra.getPalabra().compareTo(raiz.getPalabra().getPalabra())<0) {
+                resultado = raiz.getIzquierdo().contarPalabra(palabra);
+            }else{
+                if (palabra.getPalabra().compareTo(raiz.getPalabra().getPalabra())>0) {
+                    resultado = raiz.getDerecho().contarPalabra(palabra);
+                }else{
+                    if (palabra.getPalabra().compareTo(raiz.getPalabra().getPalabra())==0){
+                        resultado = raiz.getDerecho().contarPalabra(palabra)+1;
+                    }
+                }
+            }
+        }
         return resultado;
     }
     
