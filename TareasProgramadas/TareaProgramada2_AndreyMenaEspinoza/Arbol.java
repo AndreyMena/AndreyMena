@@ -40,14 +40,11 @@ public class Arbol
         }
     }
     
-    public boolean serHoja() {
-        boolean resultado = false;        
+    public int contarPalabra(Palabra palabra)
+    {
+        int resultado = 0;
+        
         return resultado;
-    }
-    
-    public Palabra buscar(String laPalabra) {
-        Palabra buscado = null;        
-        return buscado;
     }
     
     public String toString(Arbol arbol) {

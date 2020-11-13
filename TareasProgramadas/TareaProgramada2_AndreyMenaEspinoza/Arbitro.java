@@ -12,6 +12,8 @@ public class Arbitro
     private Interfaz interfaz;
     private Lista lista;
     private BaseDeDatos baseDeDatos;
+    private Arbol arbolPalabrasReservadas;
+    private Arbol arbolPalabrasNormales;
     public Arbitro(String elTitulo)
     {
         TITULO = elTitulo;
