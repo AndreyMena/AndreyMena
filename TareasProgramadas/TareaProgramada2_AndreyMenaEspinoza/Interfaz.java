@@ -49,6 +49,12 @@ public class Interfaz extends JOptionPane
     {
         this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE);
     }
+    
+    public String pedirNombreDeArchivo(String elMensaje) 
+    {
+        String nombreDeArchivo = this.showInputDialog(null, elMensaje);
+        return nombreDeArchivo;
+    }
 
     /*
      * Dice un mensaje comun
