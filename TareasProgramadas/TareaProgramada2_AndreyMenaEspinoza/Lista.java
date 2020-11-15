@@ -34,7 +34,11 @@ public class Lista
         while(!aux.getPalabraReservada().getPalabra().equals(palabra)&&aux.getSiguiente()!=null) {
             aux.setSiguiente(aux.getSiguiente());
         }
-        Palabra laPalabraReservada = aux.getPalabraReservada();
-        return laPalabraReservada;
+        Palabra laPalabra = new Palabra("");
+        if (aux.getSiguiente()==null&&!aux.getPalabraReservada().getPalabra().equals(palabra)) {
+        }else{
+            laPalabra = aux.getPalabraReservada();
+        }
+        return laPalabra;
     }
 }

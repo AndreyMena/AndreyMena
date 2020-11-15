@@ -58,6 +58,15 @@ public class Arbitro
                 archivo = new File(nombreDelArchivo);
             }while(!archivo.exists()||nombreDelArchivo==null||nombreDelArchivo.equals(""));
         }
+        boolean resultado = this.llenarArboles();
+        if (resultado==false) {
+            do {
+                interfaz.decirMensaje("Digite el nombre de otro archivo, que si pueda ser analizado.");
+                nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+                archivo = new File(nombreDelArchivo);
+            }while(!archivo.exists()||nombreDelArchivo==null||nombreDelArchivo.equals(""));
+            resultado = this.llenarArboles();
+        }
         int opcion;
         do {
             opcion = interfaz.pedirOpcion(MENU_OPCIONES_DE_ANALISIS, MENSAJE_OPCIONES);
@@ -77,5 +86,41 @@ public class Arbitro
             }
         }while(opcion == 0 || opcion == 1 || opcion == 2 || opcion == 3 ||opcion == 4 ||opcion == 5);
         
+    }
+    
+    public boolean llenarArboles() {
+        Scanner lector;
+        boolean resultado = false;
+        try {
+            lector = new Scanner(archivo);
+            String textoCompleto = "";
+            String texto = "";
+            while (lector.hasNext()) {
+                texto = lector.next();
+                Palabra palabra = new Palabra(texto);
+                if (texto.charAt(0)=='/'&&texto.charAt(1)=='/'){
+                    texto = lector.nextLine();
+                }else{
+                    if (texto.equals("/**")) {
+                        do {
+                            texto = lector.nextLine();
+                        }while(texto.equals("*/"));
+                    }else{
+                        if (!lista.buscar(texto).getPalabra().equals("")) {
+                            arbolPalabrasReservadas.agregar(palabra);
+                        }else{
+                            arbolPalabrasNormales.agregar(palabra);
+                        }
+                    }
+                }
+            }
+            lector.close();
+            interfaz.decirMensaje("Se ha completado el analisis del archivo.");
+            resultado = true;
+        }catch(IOException error) {
+            interfaz.decirMensaje("Ha ocurrido un error en la lectura del archivo");
+            resultado = false;
+        }
+        return resultado;
     }
 }
