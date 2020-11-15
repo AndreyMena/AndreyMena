@@ -65,20 +65,21 @@ public class Arbol
     public String toString(Arbol arbol) {
         String resultado= "";
         String subSolucion = "";
-        NodoArbol aux = new NodoArbol(arbol.getNodo().getPalabra());
+        Arbol aux = arbol;
         if (arbol.estarVacio()==true) {
             return "";
         }else{
-            if (aux.getIzquierdo().estarVacio()==false) {
-                subSolucion = this.toString(aux.getIzquierdo());
+            if (aux.getNodo().getIzquierdo().estarVacio()==false) {
+                subSolucion = this.toString(aux.getNodo().getIzquierdo());
                 resultado += subSolucion;
             }
-            resultado += aux.getPalabra().getPalabra();
-            if (aux.getDerecho().estarVacio()==false) {
-                subSolucion = this.toString(aux.getDerecho());
+            resultado += aux.getNodo().getPalabra().getPalabra();
+            if (aux.getNodo().getDerecho().estarVacio()==false) {
+                subSolucion = this.toString(aux.getNodo().getDerecho());
                 resultado += subSolucion;
             }
         }
+        
         return resultado;
     }
     

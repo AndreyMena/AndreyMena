@@ -27,6 +27,8 @@ public class Arbitro
         baseDeDatos = new BaseDeDatos();
         archivo = null;
         this.llenarListaEnlazada();
+        arbolPalabrasReservadas = new Arbol();
+        arbolPalabrasNormales = new Arbol();
         MENSAJE_OPCIONES = "Descripcion de cada opcion:\n"+
                            "1-Mostrar en orden alfabético ascendente todas las palabras reservadas que contiene el archivo\n"+
                            "2-Mostrar en orden alfabético ascendente todas las palabras no reservadas que contiene el archivo\n"+
@@ -65,15 +67,21 @@ public class Arbitro
                 nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
                 archivo = new File(nombreDelArchivo);
             }while(!archivo.exists()||nombreDelArchivo==null||nombreDelArchivo.equals(""));
+            arbolPalabrasReservadas = new Arbol();
+            arbolPalabrasNormales = new Arbol();
             resultado = this.llenarArboles();
         }
         int opcion;
+        String hilera = "";
         do {
             opcion = interfaz.pedirOpcion(MENU_OPCIONES_DE_ANALISIS, MENSAJE_OPCIONES);
             switch (opcion) {
                 case 0:
+                hilera = arbolPalabrasReservadas.toString(arbolPalabrasReservadas);
                 break;
                 case 1:
+                hilera = arbolPalabrasNormales.toString(arbolPalabrasNormales);
+                interfaz.decirMensaje(hilera);
                 break;
                 case 2:
                 break;

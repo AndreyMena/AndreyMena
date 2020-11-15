@@ -32,7 +32,7 @@ public class Lista
     {
         NodoLista aux = primero;
         while(!aux.getPalabraReservada().getPalabra().equals(palabra)&&aux.getSiguiente()!=null) {
-            aux.setSiguiente(aux.getSiguiente());
+            aux = aux.getSiguiente();
         }
         Palabra laPalabra = new Palabra("");
         if (aux.getSiguiente()==null&&!aux.getPalabraReservada().getPalabra().equals(palabra)) {
