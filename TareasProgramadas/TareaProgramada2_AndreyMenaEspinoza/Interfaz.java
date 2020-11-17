@@ -52,11 +52,11 @@ public class Interfaz extends JOptionPane
     }
     
     /*
-     * Pide el nombre de un archivo
+     * Pide un String.
      * @param elMensaje
      * return nombreDeArchivo
      */
-    public String pedirNombreDeArchivo(String elMensaje) 
+    public String pedirMensaje(String elMensaje) 
     {
         String nombreDeArchivo = this.showInputDialog(null, elMensaje);
         return nombreDeArchivo;

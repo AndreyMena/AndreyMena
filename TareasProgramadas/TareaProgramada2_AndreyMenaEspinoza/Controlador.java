@@ -12,7 +12,7 @@ public class Controlador
     private final String MENSAJE = "Escoja una opcion";
     private final String[] MENU_OPCIONES = {"Empezar","Ayuda","Creditos","Salir"};
     private final String MENSAJE_FUNCIONAMIENTO = "Este programa analiza un analiza un archivo fuente\nde codigo en java y permite mostrar estadisticas sobre\nel mismo.";
-    private final String CREDITOS = "Creador:\n Andrey Mena Espinoza.";
+    private final String CREDITOS = "Creador:\nAndrey Mena Espinoza.";
     private Arbitro arbitro;
     private Interfaz interfaz;
     public Controlador()

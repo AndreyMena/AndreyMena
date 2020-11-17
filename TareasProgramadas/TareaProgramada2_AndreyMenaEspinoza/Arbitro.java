@@ -54,7 +54,7 @@ public class Arbitro
     {
         String nombreDelArchivo;
         do{
-            nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+            nombreDelArchivo = interfaz.pedirMensaje("Escriba  el nombre del archivo que desea analizar");
         }while(nombreDelArchivo==null||nombreDelArchivo.equals(""));
         archivo = new File(nombreDelArchivo);
         if (archivo.exists()) {
@@ -63,7 +63,7 @@ public class Arbitro
             do {
                 interfaz.decirMensaje("El archivo NO existe");
                 do{
-                    nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+                    nombreDelArchivo = interfaz.pedirMensaje("Escriba  el nombre del archivo que desea analizar");
                 }while(nombreDelArchivo==null||nombreDelArchivo.equals(""));
                 archivo = new File(nombreDelArchivo);
             }while(!archivo.exists());
@@ -72,7 +72,7 @@ public class Arbitro
         if (resultado==false) {
             do {
                 interfaz.decirMensaje("Digite el nombre de otro archivo, que si pueda ser analizado.");
-                nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+                nombreDelArchivo = interfaz.pedirMensaje("Escriba  el nombre del archivo que desea analizar");
                 archivo = new File(nombreDelArchivo);
             }while(!archivo.exists()||nombreDelArchivo==null||nombreDelArchivo.equals(""));
             arbolPalabrasReservadas = new Arbol();
@@ -102,8 +102,22 @@ public class Arbitro
                 interfaz.mostrarVentanaJScrollPane(panelScroll);
                 break;
                 case 2:
+                String palabraReservada = interfaz.pedirMensaje("Escriba la palabra reservada que desea que \nel programa cuente.");
+                while (palabraReservada==null||palabraReservada=="") {
+                    palabraReservada = interfaz.pedirMensaje("Escriba la palabra reservada que desea que \nel programa cuente.");
+                }
+                Palabra laPalabraR = new Palabra(palabraReservada);
+                int cantidadDePalabraReservada = arbolPalabrasReservadas.contarPalabra(laPalabraR);
+                interfaz.decirMensaje("El programa a contado la palabra "+palabraReservada+" "+cantidadDePalabraReservada+" veces.\n\nNota: Si no se encontro la palabra, puede que no este en este Arbol ó\nno existe en el archivo.");
                 break;
                 case 3:
+                String palabraNormal = interfaz.pedirMensaje("Escriba la palabra NO reservada que desea que \nel programa cuente.");
+                while (palabraNormal==null||palabraNormal=="") {
+                    palabraNormal = interfaz.pedirMensaje("Escriba la palabra NO reservada que desea que \nel programa cuente.");
+                }
+                Palabra laPalabraN = new Palabra(palabraNormal);
+                int cantidadDePalabraNormal = arbolPalabrasNormales.contarPalabra(laPalabraN);
+                interfaz.decirMensaje("El programa a contado la palabra "+palabraNormal+" "+cantidadDePalabraNormal+" veces.\n\nNota: Si no se encontro la palabra, puede que no este en este Arbol ó\nno existe en el archivo.");
                 break;
                 case 4:
                 break;
