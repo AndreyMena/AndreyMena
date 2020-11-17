@@ -73,13 +73,12 @@ public class Arbol
                 subSolucion = this.toString(aux.getNodo().getIzquierdo());
                 resultado += subSolucion;
             }
-            resultado += aux.getNodo().getPalabra().getPalabra();
+            resultado += aux.getNodo().getPalabra().getPalabra()+ "\n";
             if (aux.getNodo().getDerecho().estarVacio()==false) {
                 subSolucion = this.toString(aux.getNodo().getDerecho());
                 resultado += subSolucion;
             }
         }
-        
         return resultado;
     }
     

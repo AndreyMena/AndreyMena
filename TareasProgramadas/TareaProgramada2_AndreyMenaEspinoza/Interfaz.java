@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 /**
  * Programación1
  * TareaProgramada2
@@ -50,10 +51,33 @@ public class Interfaz extends JOptionPane
         this.showMessageDialog(null, elMensaje, TITULO, PLAIN_MESSAGE);
     }
     
+    /*
+     * Pide el nombre de un archivo
+     * @param elMensaje
+     * return nombreDeArchivo
+     */
     public String pedirNombreDeArchivo(String elMensaje) 
     {
         String nombreDeArchivo = this.showInputDialog(null, elMensaje);
         return nombreDeArchivo;
+    }
+    
+    /*
+     * Muestra una ventana JTextArea
+     * @param areaTexto
+     */
+    public void mostrarVentanaJTextArea(JTextArea areaTexto)
+    {
+        this.showMessageDialog(null, areaTexto);
+    }
+    
+    /*
+     * Muestra una ventana JScrollPane
+     * @param panelScroll
+     */
+    public void mostrarVentanaJScrollPane(JScrollPane panelScroll)
+    {
+        this.showMessageDialog(null, panelScroll);
     }
 
     /*

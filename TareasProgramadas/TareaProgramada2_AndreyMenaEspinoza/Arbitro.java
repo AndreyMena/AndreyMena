@@ -1,6 +1,9 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.IOException;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import java.awt.Dimension;
 /**
  * Programación1
  * TareaProgramada2
@@ -49,16 +52,21 @@ public class Arbitro
     
     public void empezar() 
     {
-        String nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+        String nombreDelArchivo;
+        do{
+            nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+        }while(nombreDelArchivo==null||nombreDelArchivo.equals(""));
         archivo = new File(nombreDelArchivo);
         if (archivo.exists()) {
             interfaz.decirMensaje("El archivo SÍ existe, puede ser analizado");
         }else{
             do {
                 interfaz.decirMensaje("El archivo NO existe");
-                nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+                do{
+                    nombreDelArchivo = interfaz.pedirNombreDeArchivo("Escriba  el nombre del archivo que desea analizar");
+                }while(nombreDelArchivo==null||nombreDelArchivo.equals(""));
                 archivo = new File(nombreDelArchivo);
-            }while(!archivo.exists()||nombreDelArchivo==null||nombreDelArchivo.equals(""));
+            }while(!archivo.exists());
         }
         boolean resultado = this.llenarArboles();
         if (resultado==false) {
@@ -74,14 +82,24 @@ public class Arbitro
         int opcion;
         String hilera = "";
         do {
+            hilera = "";
             opcion = interfaz.pedirOpcion(MENU_OPCIONES_DE_ANALISIS, MENSAJE_OPCIONES);
             switch (opcion) {
                 case 0:
-                hilera = arbolPalabrasReservadas.toString(arbolPalabrasReservadas);
+                hilera += "Estas son las palabras reservadas \ndel archivo ordenadas alfabeticamente:\n\n";
+                hilera += arbolPalabrasReservadas.toString(arbolPalabrasReservadas);                
+                JTextArea areaTexto = new JTextArea(hilera);
+                JScrollPane panelScroll = new JScrollPane(areaTexto);
+                panelScroll.setPreferredSize(new Dimension(400,500));
+                interfaz.mostrarVentanaJScrollPane(panelScroll);
                 break;
                 case 1:
-                hilera = arbolPalabrasNormales.toString(arbolPalabrasNormales);
-                interfaz.decirMensaje(hilera);
+                hilera += "Estas son las palabras no reservadas \ndel archivo ordenadas alfabeticamente:\n\n";
+                hilera += arbolPalabrasNormales.toString(arbolPalabrasNormales);
+                areaTexto = new JTextArea(hilera);
+                panelScroll = new JScrollPane(areaTexto);
+                panelScroll.setPreferredSize(new Dimension(400,500));
+                interfaz.mostrarVentanaJScrollPane(panelScroll);
                 break;
                 case 2:
                 break;
