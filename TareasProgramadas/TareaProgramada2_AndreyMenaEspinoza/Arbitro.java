@@ -14,7 +14,7 @@ import java.awt.Dimension;
 public class Arbitro
 {
     private final String TITULO;
-    private final String[] MENU_OPCIONES_DE_ANALISIS = {"1","2","3","4","5","6","7"};
+    private final String[] MENU_OPCIONES_DE_ANALISIS = {"1","2","3","4","5","6","7-Salir"};
     private final String MENSAJE_OPCIONES;
     private Interfaz interfaz;
     private Lista lista;
@@ -93,6 +93,7 @@ public class Arbitro
                 panelScroll.setPreferredSize(new Dimension(400,500));
                 interfaz.mostrarVentanaJScrollPane(panelScroll);
                 break;
+                
                 case 1:
                 hilera += "Estas son las palabras no reservadas \ndel archivo ordenadas alfabeticamente:\n\n";
                 hilera += arbolPalabrasNormales.toString(arbolPalabrasNormales);
@@ -101,6 +102,7 @@ public class Arbitro
                 panelScroll.setPreferredSize(new Dimension(400,500));
                 interfaz.mostrarVentanaJScrollPane(panelScroll);
                 break;
+                
                 case 2:
                 String palabraReservada = interfaz.pedirMensaje("Escriba la palabra reservada que desea que \nel programa cuente.");
                 while (palabraReservada==null||palabraReservada=="") {
@@ -110,6 +112,7 @@ public class Arbitro
                 int cantidadDePalabraReservada = arbolPalabrasReservadas.contarPalabra(laPalabraR);
                 interfaz.decirMensaje("El programa a contado la palabra "+palabraReservada+" "+cantidadDePalabraReservada+" veces.\n\nNota: Si no se encontro la palabra, puede que no este en este Arbol ó\nno existe en el archivo.");
                 break;
+                
                 case 3:
                 String palabraNormal = interfaz.pedirMensaje("Escriba la palabra NO reservada que desea que \nel programa cuente.");
                 while (palabraNormal==null||palabraNormal=="") {
@@ -119,9 +122,46 @@ public class Arbitro
                 int cantidadDePalabraNormal = arbolPalabrasNormales.contarPalabra(laPalabraN);
                 interfaz.decirMensaje("El programa a contado la palabra "+palabraNormal+" "+cantidadDePalabraNormal+" veces.\n\nNota: Si no se encontro la palabra, puede que no este en este Arbol ó\nno existe en el archivo.");
                 break;
+                
                 case 4:
+                Palabra llaveAbierta = new Palabra("{");
+                Palabra llaveCerrada = new Palabra("}");
+                int cantidadDeLlavesAbiertas = arbolPalabrasReservadas.contarPalabra(llaveAbierta);
+                int cantidadDeLlavesCerradas = arbolPalabrasReservadas.contarPalabra(llaveCerrada);
+                int llavesFaltantes = 0;
+                if (cantidadDeLlavesAbiertas==cantidadDeLlavesCerradas) {
+                    interfaz.decirMensaje("Al programa no le faltan llaves.");
+                }else{
+                    if (cantidadDeLlavesAbiertas>cantidadDeLlavesCerradas) {
+                        llavesFaltantes = cantidadDeLlavesAbiertas-cantidadDeLlavesCerradas;
+                        interfaz.decirMensaje("Al programa le faltan "+llavesFaltantes+" llaves cerradas");
+                    }else{
+                        if (cantidadDeLlavesAbiertas<cantidadDeLlavesCerradas) {
+                            llavesFaltantes = cantidadDeLlavesCerradas-cantidadDeLlavesAbiertas;
+                            interfaz.decirMensaje("Al programa le faltan "+llavesFaltantes+" llaves abiertas");
+                        }
+                    }
+                }
                 break;
                 case 5:
+                Palabra parentesisAbierto = new Palabra("(");
+                Palabra parentesisCerrado = new Palabra(")");
+                int cantidadDeParentesisAbiertos = arbolPalabrasReservadas.contarPalabra(parentesisAbierto);
+                int cantidadDeParentesisCerrados = arbolPalabrasReservadas.contarPalabra(parentesisCerrado);
+                int parentesisFaltantes = 0;
+                if (cantidadDeParentesisAbiertos==cantidadDeParentesisCerrados) {
+                    interfaz.decirMensaje("Al programa no le faltan parentesis.");
+                }else{
+                    if (cantidadDeParentesisAbiertos>cantidadDeParentesisCerrados) {
+                        parentesisFaltantes = cantidadDeParentesisAbiertos-cantidadDeParentesisCerrados;
+                        interfaz.decirMensaje("Al programa le faltan "+parentesisFaltantes+" parentesis cerrados");
+                    }else{
+                        if (cantidadDeParentesisAbiertos<cantidadDeParentesisCerrados) {
+                            llavesFaltantes = cantidadDeParentesisCerrados-cantidadDeParentesisAbiertos;
+                            interfaz.decirMensaje("Al programa le faltan "+parentesisFaltantes+" parentesis abiertos");
+                        }
+                    }
+                }
                 break;
             }
         }while(opcion == 0 || opcion == 1 || opcion == 2 || opcion == 3 ||opcion == 4 ||opcion == 5);
@@ -143,13 +183,19 @@ public class Arbitro
                 }else{
                     if (texto.equals("/**")) {
                         do {
-                            texto = lector.nextLine();
-                        }while(texto.equals("*/"));
+                            texto = lector.next();
+                        }while(!texto.equals("*/"));
                     }else{
-                        if (!lista.buscar(texto).getPalabra().equals("")) {
-                            arbolPalabrasReservadas.agregar(palabra);
+                        if (texto.equals("/*")) {
+                            do {
+                                texto = lector.next();
+                            }while(!texto.equals("*/"));
                         }else{
-                            arbolPalabrasNormales.agregar(palabra);
+                            if (!lista.buscar(texto).getPalabra().equals("")) {
+                                arbolPalabrasReservadas.agregar(palabra);
+                            }else{
+                                arbolPalabrasNormales.agregar(palabra);
+                            }
                         }
                     }
                 }
