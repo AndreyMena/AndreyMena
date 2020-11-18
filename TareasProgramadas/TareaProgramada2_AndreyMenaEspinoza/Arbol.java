@@ -10,13 +10,17 @@ public class Arbol
 {
     NodoArbol raiz;
     /**
-     * Constructor for objects of class Arbol
+     * Inicializa el arbol con su raiz.
      */
     public Arbol()
     {
         raiz = null;
     }
     
+    /*
+     * Este metodo verifica si un nodo esta vacio.
+     * @return resultado
+     */
     public boolean estarVacio() 
     {
         boolean resultado = false;
@@ -26,6 +30,10 @@ public class Arbol
         return resultado;
     }
     
+    /*
+     * Este metodo agrega un objeto de tipo Palabra al arbol.
+     * @param palabraNueva
+     */
     public void agregar(Palabra palabraNueva)
     {
         if (this.estarVacio()) {
@@ -40,6 +48,11 @@ public class Arbol
         }
     }
     
+    /*
+     * Este metodo cuenta las veces que se encuentra una palabra en el programa.
+     * @param palabra
+     * @return resultado las veces que se encontraba la palabra
+     */
     public int contarPalabra(Palabra palabra)
     {
         int resultado = 0;
@@ -62,6 +75,11 @@ public class Arbol
         return resultado;
     }
     
+    /*
+     * Este metodo devuelve el contenido de todo el arbol nodo por nodo alfabeticamente, osea en orden izquierda, raiz, derecha.
+     * @param arbol
+     * @return resultado Todas las palabras del arbol alfabeticamente y una en cada linea.
+     */
     public String toString(Arbol arbol) {
         String resultado= "";
         String subSolucion = "";
@@ -82,6 +100,10 @@ public class Arbol
         return resultado;
     }
     
+    /*
+     * Devuelve el nodo
+     * @return raiz.
+     */
     public NodoArbol getNodo() {
         return raiz;
     }

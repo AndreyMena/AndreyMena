@@ -15,6 +15,9 @@ public class Controlador
     private final String CREDITOS = "Creador:\nAndrey Mena Espinoza.";
     private Arbitro arbitro;
     private Interfaz interfaz;
+    /**
+     * Inicializa el controlador con su arbitro e interfaz.
+     */
     public Controlador()
     {
         arbitro = new Arbitro(TITULO);
@@ -22,7 +25,7 @@ public class Controlador
     }
 
     /*
-     * Inicia el juego con sus opciones y dirige al usuario dependiendo de su eleccion.
+     * Inicia el programa con sus opciones y dirige al usuario dependiendo de su eleccion.
      */
     public void iniciar()
     {
@@ -44,7 +47,7 @@ public class Controlador
     }  
 
     /*
-     * Metodo principal para iniciar TODO el juego en su respectivo orden.
+     * Metodo principal para iniciar TODO el programa en su respectivo orden.
      * @param parametros
      */
     public static void main(String[] parametros)

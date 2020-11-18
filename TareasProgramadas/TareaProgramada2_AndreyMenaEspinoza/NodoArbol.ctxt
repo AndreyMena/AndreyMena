@@ -1,19 +1,25 @@
 #BlueJ class context
 comment0.target=NodoArbol
-comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ cada\ nodo\ del\ arbol.\r\n
+comment0.text=\r\n\ Programaci\u00F3n1\r\n\ TareaProgramada2\r\n\ @author\ (AndreyMenaEspinoza\ Carn\u00E9\:\ C04740)\r\n\ @version\ (1.1)\ \r\n\ Esta\ clase\ representa\ un\ nodo\ perteneciente\ a\ un\ arbol.\r\n
 comment1.params=laPalabra
 comment1.target=NodoArbol(Palabra)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
+comment1.text=\r\n\ Inicializa\ el\ nodo\ con\ sus\ campos.\r\n\ @param\ laPalabra\r\n
 comment2.params=laPalabra
 comment2.target=void\ setPalabra(Palabra)
+comment2.text=\r\n\ Coloca\ o\ cambia\ la\ palabra.\r\n\ @param\ laPalabra\r\n
 comment3.params=
 comment3.target=Palabra\ getPalabra()
+comment3.text=\r\n\ Devuelve\ la\ palabra.\r\n\ @return\ palabra\r\n
 comment4.params=elDerecho
 comment4.target=void\ setDerecho(Arbol)
+comment4.text=\r\n\ Coloca\ o\ cambia\ el\ arbol\ derecho.\r\n\ @param\ elDerecho\r\n
 comment5.params=elIzquierdo
 comment5.target=void\ setIzquierdo(Arbol)
+comment5.text=\r\n\ Coloca\ o\ cambia\ el\ arbol\ izquierdo.\r\n\ @param\ elIzquierdo\r\n
 comment6.params=
 comment6.target=Arbol\ getDerecho()
+comment6.text=\r\n\ Devuelve\ el\ arbol\ derecho.\r\n\ @return\ derecho\r\n
 comment7.params=
 comment7.target=Arbol\ getIzquierdo()
+comment7.text=\r\n\ Devuelve\ el\ arbol\ izquierdo.\r\n\ @return\ izquierdo\r\n
 numComments=8

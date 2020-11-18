@@ -9,11 +9,18 @@
 public class Lista
 {
     private NodoLista primero;
+    /**
+     * Inicializa la lista y su atributo
+     */
     public Lista()
     {
         primero = null;
     }
     
+    /*
+     * Este metodo agrega una palabra reservada nueva a la lista.
+     * @param nueva
+     */
     public void agregarPalabraReservada(Palabra nueva)
     {
         NodoLista nodoNuevo = new NodoLista(nueva);
@@ -28,6 +35,11 @@ public class Lista
         }
     }
     
+    /*
+     * Este metodo busca un palabra en la lista.
+     * @param palabra
+     * @return laPalabra
+     */
     public Palabra buscar(String palabra)
     {
         NodoLista aux = primero;

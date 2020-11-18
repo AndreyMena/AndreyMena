@@ -22,6 +22,10 @@ public class Arbitro
     private Arbol arbolPalabrasReservadas;
     private Arbol arbolPalabrasNormales;
     private File archivo;
+    /**
+     * Inicializa el arbitro con sus atributos.
+     * @param elTitulo
+     */
     public Arbitro(String elTitulo)
     {
         TITULO = elTitulo;
@@ -43,13 +47,19 @@ public class Arbitro
                            "\n\nElija una opcion";
     }
     
+    /*
+     * Este metodo llena la lista enlazada con las palabras reservadas que se encuentran almacenadas en la clase BaseDeDatos.
+     */
     public void llenarListaEnlazada(){
-        for (int i = 0; i<51;i++) {
+        for (int i = 0; i<54;i++) {
             Palabra palabraReservada = baseDeDatos.getPalabraReservada(i);
             lista.agregarPalabraReservada(palabraReservada);
         }
     }
     
+    /*
+     * Este metodo empieza las funcionalidades del programa cuando el usuario lo indica.
+     */
     public void empezar() 
     {
         String nombreDelArchivo;
@@ -168,6 +178,11 @@ public class Arbitro
         
     }
     
+    /*
+     * Este metodo llena los dos arboles del programa, el de palabras reservadas y el de palabras no reservadas segun cada palabra
+     * que encuentra en el archivo.
+     * @return resultado un booleano que especifica si se logro hacer la lectura sin errores.
+     */
     public boolean llenarArboles() {
         Scanner lector;
         boolean resultado = false;

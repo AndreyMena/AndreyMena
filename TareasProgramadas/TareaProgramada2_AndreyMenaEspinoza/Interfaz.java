@@ -12,7 +12,8 @@ import javax.swing.JScrollPane;
 public class Interfaz extends JOptionPane
 {
     private final String TITULO;    
-    /*
+    /**
+     * Inicializa la interfaz con su titulo.
      * @param elTitulo
      */
     public Interfaz(String elTitulo)
@@ -54,7 +55,7 @@ public class Interfaz extends JOptionPane
     /*
      * Pide un String.
      * @param elMensaje
-     * return nombreDeArchivo
+     * @return nombreDeArchivo
      */
     public String pedirMensaje(String elMensaje) 
     {
