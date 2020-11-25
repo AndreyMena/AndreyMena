@@ -53,17 +53,21 @@ class ListaDoble  {
         if (ultimo != null) {
             NodoDoble auxPenultimo = ultimo;
             int enteroAnterior = 0;
-            if (ultimo.getAnterior()!=null&&ultimo.getAnterior().getAnterior()!=null) {
-                
+            if (ultimo.getAnterior()!=null&&ultimo.getAnterior().getAnterior()==null) {
+                auxPenultimo = ultimo.getAnterior();
+                enteroAnterior = ultimo.getEntero();
                 ultimo.setAnterior(new NodoDoble(elEntero));
-                ultimo.getAnterior().setSiguiente(ultimo);
+                ultimo.getAnterior().setSiguiente(new NodoDoble(auxPenultimo.getEntero()));
+                ultimo.setSiguiente(new NodoDoble(enteroAnterior));
+                ultimo.getSiguiente().setAnterior(ultimo);
+                ultimo = ultimo.getSiguiente();
                 primero = ultimo.getAnterior();
             }else{
                 if (ultimo.getAnterior()==null) {
                     enteroAnterior = ultimo.getEntero();
                     ultimo.setAnterior(new NodoDoble(elEntero));
                     primero = ultimo.getAnterior();
-                    ultimo.setEntero(enteroAnterior);
+                    primero.setSiguiente(ultimo);
                 }else{
                     if (ultimo.getAnterior()!=null&& ultimo.getAnterior().getAnterior()!=null) {
                         auxPenultimo = ultimo.getAnterior();
@@ -87,7 +91,6 @@ class ListaDoble  {
                     }
                 }
             }
-            
         }else{
             ultimo = new NodoDoble(elEntero);
             primero = new NodoDoble(elEntero);
