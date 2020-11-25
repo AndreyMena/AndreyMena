@@ -50,12 +50,34 @@ class ListaDoble  {
     // PREGUNTA 3 DEL EXAMEN
     public void insertarPenultimo(int elEntero) 
     {
-        NodoDoble auxPenultimo = ultimo.getAnterior();
-        int enteroAnterior = auxPenultimo.getEntero();
-        
-        auxPenultimo.setEntero(elEntero);
-        NodoDoble anteriorNodo= new NodoDoble(enteroAnterior)
-        auxPenultimo.setSiguiente(new NodoDoble(enteroAnterior));
+        if (ultimo != null) {
+            NodoDoble auxPenultimo = ultimo;
+            int enteroAnterior = 0;
+            if (ultimo.getAnterior()!=null) {
+                auxPenultimo = ultimo.getAnterior();
+                enteroAnterior = auxPenultimo.getEntero();
+            }else{
+                ultimo.setAnterior(new NodoDoble(elEntero));
+            }
+            auxPenultimo.setEntero(elEntero);
+            NodoDoble anteriorNodo = new NodoDoble(enteroAnterior);
+            auxPenultimo.setSiguiente(anteriorNodo);
+            auxPenultimo.getSiguiente().setAnterior(auxPenultimo);
+            
+            auxPenultimo.getSiguiente().setSiguiente(new NodoDoble(ultimo.getEntero()));
+            auxPenultimo.getSiguiente().getSiguiente().setAnterior(auxPenultimo.getSiguiente());
+            
+            do {
+                auxPenultimo = auxPenultimo.getAnterior();
+            }while(auxPenultimo.getAnterior()!=null);
+            primero = auxPenultimo;
+            do {
+                auxPenultimo = auxPenultimo.getSiguiente();
+            }while(auxPenultimo.getSiguiente()!=null);
+            ultimo = auxPenultimo;
+        }else{
+            ultimo = new NodoDoble(elEntero);
+            primero = new NodoDoble(elEntero);
+        }
     }
-
 }
