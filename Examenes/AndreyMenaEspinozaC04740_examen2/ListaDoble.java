@@ -53,28 +53,41 @@ class ListaDoble  {
         if (ultimo != null) {
             NodoDoble auxPenultimo = ultimo;
             int enteroAnterior = 0;
-            if (ultimo.getAnterior()!=null) {
-                auxPenultimo = ultimo.getAnterior();
-                enteroAnterior = auxPenultimo.getEntero();
-            }else{
+            if (ultimo.getAnterior()!=null&&ultimo.getAnterior().getAnterior()!=null) {
+                
                 ultimo.setAnterior(new NodoDoble(elEntero));
+                ultimo.getAnterior().setSiguiente(ultimo);
+                primero = ultimo.getAnterior();
+            }else{
+                if (ultimo.getAnterior()==null) {
+                    enteroAnterior = ultimo.getEntero();
+                    ultimo.setAnterior(new NodoDoble(elEntero));
+                    primero = ultimo.getAnterior();
+                    ultimo.setEntero(enteroAnterior);
+                }else{
+                    if (ultimo.getAnterior()!=null&& ultimo.getAnterior().getAnterior()!=null) {
+                        auxPenultimo = ultimo.getAnterior();
+                        enteroAnterior = ultimo.getAnterior().getEntero();
+                        auxPenultimo.setEntero(elEntero);
+                        NodoDoble anteriorNodo = new NodoDoble(enteroAnterior);
+                        auxPenultimo.setSiguiente(anteriorNodo);
+                        auxPenultimo.getSiguiente().setAnterior(auxPenultimo);
+                
+                        auxPenultimo.getSiguiente().setSiguiente(new NodoDoble(ultimo.getEntero()));
+                        auxPenultimo.getSiguiente().getSiguiente().setAnterior(auxPenultimo.getSiguiente());
+                
+                        do {
+                            auxPenultimo = auxPenultimo.getAnterior();
+                        }while(auxPenultimo.getAnterior()!=null);
+                        primero = auxPenultimo;
+                        do {
+                            auxPenultimo = auxPenultimo.getSiguiente();
+                        }while(auxPenultimo.getSiguiente()!=null);
+                        ultimo = auxPenultimo;
+                    }
+                }
             }
-            auxPenultimo.setEntero(elEntero);
-            NodoDoble anteriorNodo = new NodoDoble(enteroAnterior);
-            auxPenultimo.setSiguiente(anteriorNodo);
-            auxPenultimo.getSiguiente().setAnterior(auxPenultimo);
             
-            auxPenultimo.getSiguiente().setSiguiente(new NodoDoble(ultimo.getEntero()));
-            auxPenultimo.getSiguiente().getSiguiente().setAnterior(auxPenultimo.getSiguiente());
-            
-            do {
-                auxPenultimo = auxPenultimo.getAnterior();
-            }while(auxPenultimo.getAnterior()!=null);
-            primero = auxPenultimo;
-            do {
-                auxPenultimo = auxPenultimo.getSiguiente();
-            }while(auxPenultimo.getSiguiente()!=null);
-            ultimo = auxPenultimo;
         }else{
             ultimo = new NodoDoble(elEntero);
             primero = new NodoDoble(elEntero);
