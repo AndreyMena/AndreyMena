@@ -61,7 +61,7 @@ class ListaDoble  {
                 ultimo.setSiguiente(new NodoDoble(enteroAnterior));
                 ultimo.getSiguiente().setAnterior(ultimo);
                 ultimo = ultimo.getSiguiente();
-                primero = ultimo.getAnterior();
+                primero = ultimo.getAnterior().getAnterior();
             }else{
                 if (ultimo.getAnterior()==null) {
                     enteroAnterior = ultimo.getEntero();
