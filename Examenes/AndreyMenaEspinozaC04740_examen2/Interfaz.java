@@ -1,6 +1,10 @@
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-
+/**
+ * Examen 2 - CI0112 - Programación 1
+ * @author Andrey Mena Espinoza C04740 y Profesora Maureen Murillo
+ * @version 1.1
+ */
 public class Interfaz extends JOptionPane 
 {
     public Interfaz() {

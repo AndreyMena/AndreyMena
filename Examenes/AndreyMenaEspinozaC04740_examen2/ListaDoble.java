@@ -1,3 +1,9 @@
+
+/**
+ * Examen 2 - CI0112 - Programación 1
+ * @author Andrey Mena Espinoza C04740 y Profesora Maureen Murillo
+ * @version 1.1
+ */
 class ListaDoble  {
     private NodoDoble primero;
     private NodoDoble ultimo;

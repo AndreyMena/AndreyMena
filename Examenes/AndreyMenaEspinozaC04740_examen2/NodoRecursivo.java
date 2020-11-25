@@ -1,4 +1,9 @@
 
+/**
+ * Examen 2 - CI0112 - Programación 1
+ * @author Andrey Mena Espinoza C04740 y Profesora Maureen Murillo
+ * @version 1.1
+ */
 class NodoRecursivo {
     private int entero;
     private ListaRecursiva siguiente;
