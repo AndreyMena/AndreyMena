@@ -48,8 +48,14 @@ class ListaDoble  {
     }
 
     // PREGUNTA 3 DEL EXAMEN
-    public void insertarPenultimo(int elEntero) {
-
+    public void insertarPenultimo(int elEntero) 
+    {
+        NodoDoble auxPenultimo = ultimo.getAnterior();
+        int enteroAnterior = auxPenultimo.getEntero();
+        
+        auxPenultimo.setEntero(elEntero);
+        NodoDoble anteriorNodo= new NodoDoble(enteroAnterior)
+        auxPenultimo.setSiguiente(new NodoDoble(enteroAnterior));
     }
 
 }

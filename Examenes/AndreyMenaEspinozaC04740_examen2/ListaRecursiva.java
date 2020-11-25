@@ -59,7 +59,7 @@ class ListaRecursiva  {
         boolean resultado = true;
         boolean subResultado = true;
         if (primero!=null) {
-            if (primero.getEntero() >=0) {
+            if (primero.getEntero() >= 0) {
                 resultado = true;
                 subResultado = primero.getSiguiente().tenerSoloPositivos();
                 if (subResultado==false) {
