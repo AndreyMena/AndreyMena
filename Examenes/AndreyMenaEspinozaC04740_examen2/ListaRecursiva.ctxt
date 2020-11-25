@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=ListaRecursiva
+comment1.params=
+comment1.target=ListaRecursiva()
+comment2.params=
+comment2.target=NodoRecursivo\ getPrimero()
+comment3.params=
+comment3.target=boolean\ estarVacia()
+comment4.params=elEntero
+comment4.target=void\ insertarFinal(int)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=elBuscado
+comment6.target=int\ buscarCuantos(int)
+comment7.params=
+comment7.target=boolean\ tenerSoloPositivos()
+numComments=8

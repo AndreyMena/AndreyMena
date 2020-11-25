@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=NodoRecursivo
+comment1.params=elEntero
+comment1.target=NodoRecursivo(int)
+comment2.params=
+comment2.target=int\ getEntero()
+comment3.params=
+comment3.target=ListaRecursiva\ getSiguiente()
+comment4.params=elSiguiente
+comment4.target=void\ setSiguiente(ListaRecursiva)
+comment5.params=elEntero
+comment5.target=void\ setEntero(int)
+numComments=6

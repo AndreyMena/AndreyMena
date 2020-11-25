@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=ListaDoble
+comment1.params=
+comment1.target=ListaDoble()
+comment2.params=
+comment2.target=NodoDoble\ getPrimero()
+comment3.params=
+comment3.target=NodoDoble\ getUltimo()
+comment4.params=
+comment4.target=boolean\ estarVacia()
+comment5.params=
+comment5.target=java.lang.String\ toStringDerechoReves()
+comment6.params=elEntero
+comment6.target=void\ insertarPenultimo(int)
+numComments=7

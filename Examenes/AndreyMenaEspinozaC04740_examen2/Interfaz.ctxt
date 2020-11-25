@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Interfaz
+comment1.params=
+comment1.target=Interfaz()
+comment2.params=elMensaje
+comment2.target=void\ decirMensaje(java.lang.String)
+comment3.params=elMensaje
+comment3.target=java.lang.String\ pedirHilera(java.lang.String)
+comment4.params=elMensaje
+comment4.target=int\ pedirEntero(java.lang.String)
+numComments=5
